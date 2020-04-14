@@ -39,4 +39,5 @@ Importante que  já tenha  noções de como se configura um projeto MVC e como f
 ## Comandos importantes:
 
 ```Manage.py makemigrations``` ===> Gera um arquivo migration a partir do arquivo Models.py<br/>
-```Manage.py migrate``` ===> cria um banco de dados e insere os dados modelados dentro da migration no banco de dados via sql query
+```Manage.py migrate``` ===> cria um banco de dados e insere os dados modelados dentro da migration no banco de dados via sql query<br/>
+```Manage.py runserver```===> Inicia o servidor local da api
