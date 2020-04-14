@@ -35,3 +35,8 @@ Importante que  já tenha  noções de como se configura um projeto MVC e como f
 ## Como está organizado o Projeto
 
 > Ainda em Construção
+
+## Comandos importantes:
+
+```Manage.py makemigrations``` ===> Gera um arquivo migration a partir do arquivo Models.py<br/>
+```Manage.py migrate``` ===> cria um banco de dados e insere os dados modelados dentro da migration no banco de dados via sql query
