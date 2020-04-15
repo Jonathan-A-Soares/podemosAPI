@@ -2,10 +2,10 @@
 Api desenvolvida em Python para  a plataforma educacional  PODEMOS.
 
   Podemos é uma plataforma educacional voltada para a livre disseminação de conhecimento, com esse intuito está api visa organizar e alimentar
-todas as rotas que serão requisitadas aqui. Para fazer isso faremos uso de um framework em python chamado Django, o qual não dá um ambiente
-propício para a criação de APIs  completas com relação ao backend. Aqui serão deixadas intruções específicas sobre como se comporta o Django 
-em um ambiente de desenvolvimente, quais seus controles e quais suas dependências,para que futuros programadores que nunca usaram um Backend
-em python não sintam dificuldades.
+todas as rotas que serão requisitadas aqui. Para fazer isso faremos uso de um framework em python chamado Django, o qual nos dá um ambiente
+propício para a criação de APIs  completas em relação ao backend. Aqui serão deixadas intruções específicas sobre como se comporta o Django 
+em um ambiente de desenvolvimento, quais seus comandos e quais suas dependências,para que futuros programadores que nunca usaram viram Backend
+em python, não sintam dificuldades.
 
 ## Instruções Básicas
 
