@@ -36,3 +36,9 @@ class Conteudos(models.Model):
     conteudo = models.CharField(max_length=200)
     datetime = models.DateTimeField()
     postador = models.CharField(max_length=200)
+
+class Cursos(models.Model):
+    nome = models.CharField(max_length=200)
+    descricao = models.TextField()
+    imagem = models.CharField(max_length=200)
+    datetime = models.DateTimeField()
