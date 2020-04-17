@@ -1,12 +1,7 @@
 from django.db import models
+from datetime import datetime
 
-class Cliente(models.Model):
-    nome =models.CharField(max_length=50)
-    endereço = models.CharField(max_length=50)
-    idade = models.IntegerField()
 
-    def __str__(self):
-        return self.nome
 
 
 class Aluno(models.Model):
@@ -16,8 +11,8 @@ class Aluno(models.Model):
     email = models.CharField(max_length=50, unique=True)
     password = models.CharField(max_length=50)
     username = models.CharField(max_length=25, unique=True)
-    cpf = models.IntegerField(unique=True)
-    datetime = models.DateTimeField()
+    cpf = models.CharField(max_length=25, unique=True)
+    datetime = models.DateTimeField(default=datetime.now,blank=True)
 
     def __str__(self):
         return self.nome
@@ -26,7 +21,7 @@ class Noticias(models.Model):
     titulo = models.CharField(max_length=200)
     descricao = models.TextField()
     imagem = models.CharField(max_length=200)
-    datetime = models.DateTimeField()
+    datetime = models.DateTimeField(default=datetime.now,blank=True)
     postador = models.CharField(max_length=200)
 
 class Conteudos(models.Model):
@@ -34,11 +29,11 @@ class Conteudos(models.Model):
     descricao = models.TextField()
     imagem = models.CharField(max_length=200)
     conteudo = models.CharField(max_length=200)
-    datetime = models.DateTimeField()
+    datetime = models.DateTimeField(default=datetime.now,blank=True)
     postador = models.CharField(max_length=200)
 
 class Cursos(models.Model):
     nome = models.CharField(max_length=200)
     descricao = models.TextField()
     imagem = models.CharField(max_length=200)
-    datetime = models.DateTimeField()
+    datetime = models.DateTimeField(default=datetime.now,blank=True)
