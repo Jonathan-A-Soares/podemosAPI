@@ -24,7 +24,7 @@ class Noticias(models.Model):
     datetime = models.DateTimeField(default=datetime.now,blank=True)
     postador = models.CharField(max_length=200)
 
-class Conteudos(models.Model):
+class Extras(models.Model):
     titulo = models.CharField(max_length=200)
     descricao = models.TextField()
     imagem = models.CharField(max_length=200)
