@@ -37,3 +37,4 @@ class Cursos(models.Model):
     descricao = models.TextField()
     imagem = models.CharField(max_length=200)
     datetime = models.DateTimeField(default=datetime.now,blank=True)
+    professor = models.CharField(max_length=200)
