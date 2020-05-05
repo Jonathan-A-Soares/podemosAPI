@@ -30,11 +30,14 @@ class Extras(models.Model):
     imagem = models.CharField(max_length=200)
     conteudo = models.CharField(max_length=200)
     datetime = models.DateTimeField(default=datetime.now,blank=True)
-    postador = models.CharField(max_length=200)
+    postador = models.CharField(max_length=60)
+    tema = models.CharField(max_length=30)
 
 class Cursos(models.Model):
     nome = models.CharField(max_length=200)
     descricao = models.TextField()
     imagem = models.CharField(max_length=200)
     datetime = models.DateTimeField(default=datetime.now,blank=True)
-    professor = models.CharField(max_length=200)
+    professor = models.CharField(max_length=60)
+    alunos = models.ManyToManyField(Aluno)
+    tema = models.CharField(max_length=30)
