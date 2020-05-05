@@ -4,6 +4,7 @@
 from django.contrib import admin
 from django.urls import path,include
 from rest_framework_jwt.views import obtain_jwt_token,refresh_jwt_token
+from core.views import UsuarioViewSet
 from core.views import AlunoViewSet
 from core.views import NoticeViewSet
 from core.views import CursoView
@@ -13,6 +14,7 @@ from rest_framework_simplejwt.views import(TokenObtainPairView,TokenRefreshView)
 from rest_framework import routers
 
 router = routers.DefaultRouter()
+router.register(r'usuarios', UsuarioViewSet)
 router.register(r'alunos',AlunoViewSet)
 router.register(r'noticias',NoticeViewSet)
 router.register(r'cursos',CursoView)
