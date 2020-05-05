@@ -12,6 +12,8 @@ class Usuario(models.Model):
     perfil = models.CharField(max_length=25)
     datetime = models.DateTimeField(default=datetime.now,blank=True)
 
+    def __str__(self):
+        return self.nome
 
 class Aluno(models.Model):
     nome = models.CharField(max_length=50)
@@ -50,3 +52,11 @@ class Cursos(models.Model):
     professor = models.ForeignKey(Usuario , on_delete=models.CASCADE)
     alunos = models.ManyToManyField(Aluno)
     tema = models.CharField(max_length=30)
+
+class Certificados(models.Model):
+    titulo = titulo = models.CharField(max_length=200)
+    descricao = models.TextField()
+    imagem = models.CharField(max_length=200)
+    conteudo_certificado = models.CharField(max_length=200)
+    aluno = models.ForeignKey(Aluno , on_delete=models.CASCADE)
+    datetime = models.DateTimeField(default=datetime.now,blank=True)

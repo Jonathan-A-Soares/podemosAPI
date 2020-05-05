@@ -7,6 +7,7 @@ from .models import Aluno
 from .models import Noticias
 from .models import Cursos
 from .models import Extras
+from .models import Certificados
 
 
 
@@ -52,13 +53,19 @@ class NoticiasSerialize(serializers.ModelSerializer):
 class CursosSerialize(serializers.ModelSerializer):
     class Meta:
         model =Cursos
-        fields=('nome','descricao','imagem','datetime')
+        fields=('nome','descricao','imagem','datetime','professor','alunos','tema')
 
 
 class ExtraSerialize(serializers.ModelSerializer):
     class Meta:
         model =Extras
-        fields = ('titulo','descricao','imagem','conteudo','datetime','postador')
+        fields = ('titulo','descricao','imagem','conteudo','datetime','postador','tema')
+
+
+class CertificadoSerialize(serializers.ModelSerializer):
+    class Meta:
+        model =Certificados
+        fields = ('titulo','descricao','imagem','conteudo_certificado','aluno','datetime')
         
 
         #def validar_endereço(self, value):

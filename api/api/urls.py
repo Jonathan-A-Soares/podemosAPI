@@ -9,6 +9,7 @@ from core.views import AlunoViewSet
 from core.views import NoticeViewSet
 from core.views import CursoView
 from core.views import ExtraView
+from core.views import CertificadoView
 from rest_framework_simplejwt import views as jwt_views
 from rest_framework_simplejwt.views import(TokenObtainPairView,TokenRefreshView)
 from rest_framework import routers
@@ -19,6 +20,8 @@ router.register(r'alunos',AlunoViewSet)
 router.register(r'noticias',NoticeViewSet)
 router.register(r'cursos',CursoView)
 router.register(r'extras', ExtraView)
+router.register(r'certificados',CertificadoView)
+
 
 urlpatterns = [
     path('',include(router.urls)),

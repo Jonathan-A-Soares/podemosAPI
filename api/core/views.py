@@ -6,11 +6,13 @@ from .models import Aluno
 from .models import Noticias
 from .models import Cursos
 from .models import Extras
+from .models import Certificados
 from .serialize import UsuarioSerialize
 from .serialize import AlunoSerialize
 from .serialize import NoticiasSerialize
 from .serialize import CursosSerialize
 from .serialize import ExtraSerialize
+from .serialize import CertificadoSerialize
 import requests
 
 
@@ -34,6 +36,9 @@ class ExtraView(viewsets.ModelViewSet):
     queryset=Extras.objects.all()
     serializer_class=ExtraSerialize
 
+class CertificadoView(viewsets.ModelViewSet):
+    queryset=Certificados.objects.all()
+    serializer_class=CertificadoSerialize
 
 
 
