@@ -31,7 +31,7 @@ class Noticias(models.Model):
     descricao = models.TextField()
     imagem = models.CharField(max_length=200)
     datetime = models.DateTimeField(default=datetime.now,blank=True)
-    postador = models.ForeignKey(Usuario)
+    postador = models.ForeignKey(Usuario , on_delete=models.CASCADE)
 
 class Extras(models.Model):
     titulo = models.CharField(max_length=200)
@@ -39,7 +39,7 @@ class Extras(models.Model):
     imagem = models.CharField(max_length=200)
     conteudo = models.CharField(max_length=200)
     datetime = models.DateTimeField(default=datetime.now,blank=True)
-    postador = models.ForeignKey(Usuario)
+    postador = models.ForeignKey(Usuario , on_delete=models.CASCADE)
     tema = models.CharField(max_length=30)
 
 class Cursos(models.Model):
@@ -47,6 +47,6 @@ class Cursos(models.Model):
     descricao = models.TextField()
     imagem = models.CharField(max_length=200)
     datetime = models.DateTimeField(default=datetime.now,blank=True)
-    professor = models.ForeignKey(Usuario)
+    professor = models.ForeignKey(Usuario , on_delete=models.CASCADE)
     alunos = models.ManyToManyField(Aluno)
     tema = models.CharField(max_length=30)
