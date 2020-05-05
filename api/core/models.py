@@ -1,11 +1,20 @@
 from django.db import models
 from datetime import datetime
 
-
+class Usuario(models.Model):
+    nome = models.CharField(max_length=50)
+    endereço = models.CharField(max_length=50)
+    idade = models.IntegerField()
+    email = models.CharField(max_length=50, unique=True)
+    password = models.CharField(max_length=50)
+    username = models.CharField(max_length=25, unique=True)
+    cpf = models.CharField(max_length=25, unique=True)
+    perfil = models.CharField(max_length=25)
+    datetime = models.DateTimeField(default=datetime.now,blank=True)
 
 
 class Aluno(models.Model):
-    nome =models.CharField(max_length=50)
+    nome = models.CharField(max_length=50)
     endereço = models.CharField(max_length=50)
     idade = models.IntegerField()
     email = models.CharField(max_length=50, unique=True)
@@ -22,7 +31,7 @@ class Noticias(models.Model):
     descricao = models.TextField()
     imagem = models.CharField(max_length=200)
     datetime = models.DateTimeField(default=datetime.now,blank=True)
-    postador = models.CharField(max_length=200)
+    postador = models.ForeignKey(Usuario)
 
 class Extras(models.Model):
     titulo = models.CharField(max_length=200)
@@ -30,7 +39,7 @@ class Extras(models.Model):
     imagem = models.CharField(max_length=200)
     conteudo = models.CharField(max_length=200)
     datetime = models.DateTimeField(default=datetime.now,blank=True)
-    postador = models.CharField(max_length=60)
+    postador = models.ForeignKey(Usuario)
     tema = models.CharField(max_length=30)
 
 class Cursos(models.Model):
@@ -38,6 +47,6 @@ class Cursos(models.Model):
     descricao = models.TextField()
     imagem = models.CharField(max_length=200)
     datetime = models.DateTimeField(default=datetime.now,blank=True)
-    professor = models.CharField(max_length=60)
+    professor = models.ForeignKey(Usuario)
     alunos = models.ManyToManyField(Aluno)
     tema = models.CharField(max_length=30)
